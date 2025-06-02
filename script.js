@@ -8,3 +8,39 @@ Create an engaging user experience through the use of HTML and CSS.
 Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
 Include a README file that contains a description of your application.
 */
+
+// private methods
+async function getToken() {
+    const response = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        body: new URLSearchParams({
+            'grant_type': 'client_credentials',
+        }),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret).toString('base64'),
+        },
+    
+
+        
+    });
+
+    return await response.json();
+}
+
+
+async function getArtistInfo(access_token) {
+    const response = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e", {
+        method: 'GET',
+        headers: { 'Authorization': 'Bearer ' + access_token },
+    });
+
+    console.log(await response.json());
+}
+
+getToken().then(response => {
+    getArtistInfo(response.access_token).then(profile => {
+        console.log(profile)
+    })
+});
+

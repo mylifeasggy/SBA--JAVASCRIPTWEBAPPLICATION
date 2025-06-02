@@ -1,0 +1,15 @@
+iframe {
+    border-radius: 12px;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    
+        transform: translate(-50%, -50%);
+        top: 60%;
+        left: 50%;
+        border-radius: 16px;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+    
+}
