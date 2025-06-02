@@ -30,17 +30,26 @@ async function getToken() {
 
 
 async function getArtistInfo(access_token) {
-    const response = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e", {
+    const dataArtist = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e", {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + access_token },
     });
 
-    console.log(await response.json());
+    const data = await dataArtist.json();
+    return data;
 }
 
-getToken().then(response => {
-    getArtistInfo(response.access_token).then(profile => {
-        console.log(profile)
-    })
-});
+async function displayArtist() {
+
+    const tokenData = await getToken()
+    const accessToken = tokenData.access_token;
+
+    const profile = await getArtistInfo(accessToken)
+    console.log(profile)
+
+     console.log(profile.artists[0].name)
+
+  
+}
+displayArtist();
 
