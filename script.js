@@ -8,6 +8,19 @@ Create an engaging user experience through the use of HTML and CSS.
 Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
 Include a README file that contains a description of your application.
 */
+export {
+    getToken,
+    getArtistInfo,
+   // displayArtist,
+    artname,
+    
+}
+
+
+
+const artname = document.getElementById('art-name')
+
+
 
 // private methods
 async function getToken() {
@@ -30,7 +43,7 @@ async function getToken() {
 
 
 async function getArtistInfo(access_token) {
-    const dataArtist = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e", {
+    const dataArtist = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e,790FomKkXshlbRYZFtlgla,1mcTU81TzQhprhouKaTkpq,2LRoIwlKmHjgvigdNGBHNo", {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + access_token },
     });
@@ -39,17 +52,5 @@ async function getArtistInfo(access_token) {
     return data;
 }
 
-async function displayArtist() {
 
-    const tokenData = await getToken()
-    const accessToken = tokenData.access_token;
-
-    const profile = await getArtistInfo(accessToken)
-    console.log(profile)
-
-     console.log(profile.artists[0].name)
-
-  
-}
-displayArtist();
-
+//displayArtist();
