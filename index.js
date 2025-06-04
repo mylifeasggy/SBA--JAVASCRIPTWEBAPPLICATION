@@ -1,9 +1,16 @@
 import * as spotify from "./script.js"
+import { searchBar, container } from "./script-spotify.js"
 
+export {
+  displayArtist
+ 
+} 
 //const wholecont = document.getElementById('whole-container');
 //const container = document.querySeletector("div")
-const artistName= document.getElementById('artistName')
 const iFrame = document.getElementById('iFrame')
+//const container = document.getElementById('container')
+
+
 
 
 //https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator&theme=0
@@ -17,17 +24,26 @@ async function displayArtist() {
     const profile = await spotify.getArtistInfo(accessToken)
 
     const pa = profile.artists
-    console.log(pa)
+    console.log(pa[0])
 
 
     for (let i = 0; i < pa.length; i++) {
+
       const indexName = pa[i].name.toUpperCase();
+      //console.log(indexName)
       const indexId = pa[i].id
-      console.log(indexId)
-      console.log(indexName)
 
       if (indexName === artistName.value.trim().toUpperCase()) {
-        console.log(`Hello`)
+        // console.log(`Hello`)
+        const headerName = document.createElement('h1');
+        const socialPresence = document.createElement('h3');
+        headerName.textContent = (`${indexName}`);
+        socialPresence.textContent = (`POPULARITY: ${pa[i].popularity} FOLLOWERS: ${pa[i].followers.total}`)
+        socialPresence.style.textAlign = ('center');
+        headerName.style.textAlign = ('center');
+        container.appendChild(headerName);
+        container.appendChild(socialPresence);
+
         iFrame.src = `https://open.spotify.com/embed/artist/${indexId}?utm_source=generator&theme=0`
         return
 
@@ -36,54 +52,13 @@ async function displayArtist() {
     console.log(`we don't have that artist`)
   }
   catch (error) {
-    console.error(error);
+    //console.error(error);
   }
-    /*{
-        const index = pa[i]
-        console.log(index.name)
 
-        const info =document.createElement('option')
-        info.textContent= index.name.toUpperCase()
-        info.value = index.id
-        
-        console.log(info)
-
-        
-    }   */
 }      
 
 
 
-displayArtist()
+displayArtist();
 
-
-artistName.addEventListener('keydown', async (e) => {
- 
-  e.target.value.toUpperCase();
-
-
-    if(e.key === 'Enter' ){      
-      e.preventDefault();
-      displayArtist(); 
-       
-    }
-
-         //const embed = await fetch (`https://open.spotify.com/embed/artist/${artistselected}?utm_source=generator&theme=0`)
-        //  const embeddata = await embed.json()
-
-        //  console.log(embeddata)
-
-        //  wholeDoc.appendChild(embeddata)
-
-})
-
-// button.addEventListener('click',(e) => {
-
-//      console.log('User typed:', e.target.value)
-// })
-
-
-// function handleSearch() {
-
-
-// }
+searchBar();
