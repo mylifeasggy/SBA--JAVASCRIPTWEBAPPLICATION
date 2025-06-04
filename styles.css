@@ -1,3 +1,4 @@
+
 body {
   background-color: #fb8500;
   font-family: "Montserrat", sans-serif;
@@ -23,19 +24,33 @@ iframe {
  
 }
 
-#searchBar {
+#artistName {
     
     height: 32px;
     border-radius: 12px;
-    border: 1px solid #eaeaea;
+    border: 1px solid white;
     padding: 5px 5px;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 10px;
     cursor: pointer;
-    width: 98%;
+    width: 100%;
     
     
 }
+
+/* button {
+  float: right;
+  padding: 10px 20px;
+  border: 1px solid white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  border-radius: 12px;
+
+
+} */
+
 
 #art-name {
     text-align: center;
@@ -47,4 +62,8 @@ iframe {
 }
 .spo-container {
   width: 800px;
+}
+
+#searchDiv {
+display: flex;
 }
