@@ -3,6 +3,7 @@ import * as spotify from "./script.js"
 //const wholecont = document.getElementById('whole-container');
 //const container = document.querySeletector("div")
 const artistName= document.getElementById('artistName')
+const iFrame = document.getElementById('iFrame')
 
 
 //https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator&theme=0
@@ -16,14 +17,18 @@ async function displayArtist() {
     const profile = await spotify.getArtistInfo(accessToken)
 
     const pa = profile.artists
+    console.log(pa)
 
 
     for (let i = 0; i < pa.length; i++) {
       const indexName = pa[i].name.toUpperCase();
+      const indexId = pa[i].id
+      console.log(indexId)
       console.log(indexName)
 
       if (indexName === artistName.value.trim().toUpperCase()) {
         console.log(`Hello`)
+        iFrame.src = `https://open.spotify.com/embed/artist/${indexId}?utm_source=generator&theme=0`
         return
 
       }
@@ -53,12 +58,14 @@ displayArtist()
 
 
 artistName.addEventListener('keydown', async (e) => {
+ 
   e.target.value.toUpperCase();
 
 
     if(e.key === 'Enter' ){      
       e.preventDefault();
       displayArtist(); 
+       
     }
 
          //const embed = await fetch (`https://open.spotify.com/embed/artist/${artistselected}?utm_source=generator&theme=0`)
