@@ -26,7 +26,7 @@ async function displayArtist() {
     const accessToken = tokenData.access_token;
 
     const profile = await spotify.getArtistInfo(accessToken)
-    //console.log(profile)
+    console.log(profile)
 
     const profileArtist = profile.artists.items
     //console.log(profileArtist)
@@ -39,6 +39,7 @@ async function displayArtist() {
       
 
       const indexName = profileArtist[i].name.toUpperCase();
+      console.log(indexName)
       const indexId = profileArtist[i].id
 
 

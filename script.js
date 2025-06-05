@@ -16,8 +16,7 @@ export {
 }
 
 
-const client_id = 0;
-const client_secret = 0;
+
 
 const artname = document.getElementById('art-name')
 
@@ -45,7 +44,7 @@ async function getToken() {
 
 
 async function getArtistInfo(access_token) {
-    const dataArtist = await fetch('https://api.spotify.com/v1/search?q=%22reggaeton%22%2C+%22latin%22%2C+%22urbano+latino%22&type=artist&limit=50', {
+    const dataArtist = await fetch('https://api.spotify.com/v1/search?q=%22reggaeton%22%2C+%22trap+latino%22%2C+%22urbano+latino%22%2C+%22latin%22&type=artist&limit=50&offset=0', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + access_token },
     });
