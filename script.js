@@ -16,7 +16,8 @@ export {
 }
 
 
-
+const client_id = 0;
+const client_secret = 0;
 
 const artname = document.getElementById('art-name')
 

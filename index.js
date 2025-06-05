@@ -26,10 +26,10 @@ async function displayArtist() {
     const accessToken = tokenData.access_token;
 
     const profile = await spotify.getArtistInfo(accessToken)
-    console.log(profile)
+    //console.log(profile)
 
     const profileArtist = profile.artists.items
-    console.log(profileArtist)
+    //console.log(profileArtist)
 
     
     let foundArtist = false;
