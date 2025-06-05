@@ -13,6 +13,6 @@
 
 # M(YOU)SIC PICKS# 💎
 
-![M(YOU)SIC PICKS](<Cross Stitch App.png>)
+![M(YOU)SIC PICKS](<M(YOU)SIC PICKS.png>)
 
 <p> It's an app designed with SPOTIFY API where the user can search the name of a latin artist of the urban genre and after clicking the key 'Enter' would see facts about the social media presence like <h3> popularity </h3> and <h3>followers</h3> and also the <h3>playlist</h3> with the top tracks song. </p>
