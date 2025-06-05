@@ -23,6 +23,7 @@ const artname = document.getElementById('art-name')
 
 // private methods
 async function getToken() {
+    
     const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         body: new URLSearchParams({

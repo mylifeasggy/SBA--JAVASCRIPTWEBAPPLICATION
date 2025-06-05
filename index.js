@@ -30,7 +30,7 @@ async function displayArtist() {
     for (let i = 0; i < pa.length; i++) {
 
       const indexName = pa[i].name.toUpperCase();
-      //console.log(indexName)
+      console.log(indexName)
       const indexId = pa[i].id
 
       if (indexName === artistName.value.trim().toUpperCase()) {
@@ -52,7 +52,7 @@ async function displayArtist() {
     console.log(`we don't have that artist`)
   }
   catch (error) {
-    //console.error(error);
+    console.error('Error:' , error);
   }
 
 }      
