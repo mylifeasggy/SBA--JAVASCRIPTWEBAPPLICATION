@@ -17,6 +17,7 @@ export {
 
 
 
+
 const artname = document.getElementById('art-name')
 
 
