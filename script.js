@@ -44,7 +44,7 @@ async function getToken() {
 
 
 async function getArtistInfo(access_token) {
-    const dataArtist = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,5XJDexmWFLWOkjOEjOVX3e,790FomKkXshlbRYZFtlgla,1mcTU81TzQhprhouKaTkpq,2LRoIwlKmHjgvigdNGBHNo,7iK8PXO48WeuP03g8YR51W,2R21vXR83lH98kGeO99Y66,3qsKSpcV3ncke3hw52JSMB,2oQX8QiMXOyuqbcZEFsZfm,37i9dQZF1DZ06evO2yHJME", {
+    const dataArtist = await fetch('https://api.spotify.com/v1/search?q=%22reggaeton%22%2C+%22latin%22%2C+%22urbano+latino%22&type=artist&limit=50', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + access_token },
     });

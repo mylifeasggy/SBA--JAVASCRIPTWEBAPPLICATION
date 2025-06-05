@@ -4,15 +4,18 @@ import * as index from "./index.js"
 export {
 
     searchBar,
-    container
+    container,
+    artistName,
+    
 
 }
-
 const container = document.getElementById('container')
 const artistName = document.getElementById('artistName')
 
 
 async function searchBar() {
+
+
 
     artistName.addEventListener('keydown', async (e) => {
 
@@ -20,8 +23,9 @@ async function searchBar() {
 
 
         if (e.key === 'Enter') {
-            container.innerHTML = '';
             e.preventDefault();
+            container.innerHTML = '';
+            index.iFrame.src= '';
             setTimeout(() => {
                 index.displayArtist();
             }, 0);
@@ -33,4 +37,3 @@ async function searchBar() {
 
 }
 
-console.log(artistName)
