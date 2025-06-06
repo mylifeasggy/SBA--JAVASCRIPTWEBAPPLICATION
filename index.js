@@ -1,5 +1,5 @@
 import * as spotify from "./script.js"
-import { searchBar, container, artistName, } from "./script-spotify.js"
+import { searchBar, container, artistName, containerHover } from "./script-spotify.js"
 
 export {
   displayArtist,
@@ -39,7 +39,7 @@ async function displayArtist() {
       
 
       const indexName = profileArtist[i].name.toUpperCase();
-      console.log(indexName)
+      //console.log(indexName)
       const indexId = profileArtist[i].id
 
 
@@ -50,7 +50,7 @@ async function displayArtist() {
         const socialPresence = document.createElement('h3');
 
         headerName.textContent = indexName;
-        socialPresence.textContent = (`POPULARITY: ${profileArtist[i].popularity} FOLLOWERS: ${profileArtist[i].followers.total}`);
+        socialPresence.textContent = (`POPULARITY: ${profileArtist[i].popularity} - FOLLOWERS: ${profileArtist[i].followers.total} `);
         socialPresence.style.textAlign = 'center';
         headerName.style.textAlign = 'center';
 
@@ -82,7 +82,7 @@ async function displayArtist() {
 
 
 
-
 displayArtist();
 
 searchBar();
+containerHover();

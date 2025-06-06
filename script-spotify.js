@@ -6,6 +6,7 @@ export {
     searchBar,
     container,
     artistName,
+    containerHover
     
 
 }
@@ -26,6 +27,7 @@ async function searchBar() {
             e.preventDefault();
             container.innerHTML = '';
             index.iFrame.src= '';
+            containerHover()
             setTimeout(() => {
                 index.displayArtist();
             }, 0);
@@ -37,3 +39,18 @@ async function searchBar() {
 
 }
 
+function containerHover(){
+
+container.addEventListener('mouseover',()=>{
+ 
+    container.style.color = 'pink'
+ 
+
+
+container.addEventListener('mouseout',()=>{
+    container.style.color ='white'
+
+})
+})
+
+}
