@@ -8,6 +8,8 @@ Create an engaging user experience through the use of HTML and CSS.
 Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
 Include a README file that contains a description of your application.
 */
+
+import 'dotenv/config'
 export {
     getToken,
     getArtistInfo,
@@ -16,7 +18,8 @@ export {
 }
 
 
-
+const client_id = process.env.CLIENTID
+const client_secret = process.env.CLIENTSECRET;
 
 const artname = document.getElementById('art-name')
 
