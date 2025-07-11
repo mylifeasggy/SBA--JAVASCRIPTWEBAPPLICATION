@@ -6,15 +6,9 @@ export {
   iFrame,
 
 }
-//const wholecont = document.getElementById('whole-container');
-//const container = document.querySeletector("div")
+
 const iFrame = document.getElementById('iFrame')
-//const container = document.getElementById('container')
 
-
-
-
-//https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator&theme=0
 
 
 
